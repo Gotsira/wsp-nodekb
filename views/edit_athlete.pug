@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1 #{title}
+    form(method='POST', action='/athletes/edit/' + athlete._id)
+        #form-group
+            label Player Name:
+            input.form-control(name='name', type='text', value= athlete.name)
+        #form-group
+            label League:
+            input.form-control(name='league', type='text', value= athlete.league)
+        #form-group
+            label Club Name:
+            input.form-control(name='club', type='text', value= athlete.club)
+        #form-group
+            label Number of Titles:
+            input.form-control(name='title', type='text', value= athlete.title)
+        #form-group
+            label Body:
+            textarea.form-control(name='body')= athlete.body
+        br
+        input.btn.btn-primary(type='submit', value='Submit')
+        

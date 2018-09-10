@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= athlete.name
+    h5 Written by #{author}
+    h7 League: #{athlete.league}
+    h7 Club: #{athlete.club}
+    br
+    h7 Titles Won: #{athlete.title}
+    p= athlete.body
+    hr
+    if user
+        if user.id == athlete.author
+            a.btn.btn-default(href='/athletes/edit/'+athlete._id) Edit
+            a.btn.btn-danger.delete-athlete(href='#', data-id=athlete._id) Delete

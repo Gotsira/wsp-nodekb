@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 #{title}
+    ul.list-group
+      each athlete, i in athletes
+        li.list-group-item
+          a(href="/athletes/"+athlete._id)= athlete.name
+
